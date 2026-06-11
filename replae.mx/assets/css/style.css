@@ -617,6 +617,71 @@ body {
   .pk-wheel, .pk-body, .pk-shadow, .pk-puff { animation: none; }
 }
 
+/* ---------- Marca del navbar (REPLAE + eslogan) ---------- */
+.brand-logo img { transition: transform .4s cubic-bezier(.2,.7,.2,1); }
+.brand-logo:hover img { transform: scale(1.06) rotate(-4deg); }
+
+.brand-name {
+  display: inline-block;
+  line-height: 1.05;
+  /* degradado azul con glint blanco que cruza las letras */
+  background-image: linear-gradient(
+    100deg,
+    #082b58 0%,
+    #0B3C7A 28%,
+    #4d8de0 44%,
+    #ffffff 50%,
+    #4d8de0 56%,
+    #0B3C7A 72%,
+    #082b58 100%
+  );
+  background-size: 280% auto;
+  background-position: 120% center;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  /* relieve/volumen */
+  filter:
+    drop-shadow(0 1px 0 rgba(255,255,255,.6))
+    drop-shadow(0 2px 2px rgba(8,43,88,.35))
+    drop-shadow(0 4px 8px rgba(11,60,122,.22));
+  animation: brandSheen 5s ease-in-out infinite;
+  transition: transform .35s cubic-bezier(.2,.7,.2,1);
+}
+.brand-logo:hover .brand-name { transform: translateY(-1px) scale(1.04); }
+@keyframes brandSheen {
+  0%   { background-position: 120% center; }
+  55%  { background-position: -120% center; }
+  100% { background-position: -120% center; }
+}
+
+.brand-tag {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: .22em;
+  font-weight: 700;
+  margin-top: 2px;
+  color: #c79200;
+  position: relative;
+  padding-left: 16px;
+}
+.brand-tag::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 50%;
+  width: 11px; height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--yellow), var(--yellow-dark));
+  transform: translateY(-50%);
+  transition: width .35s ease;
+}
+.brand-logo:hover .brand-tag::before { width: 16px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-name { animation: none; }
+}
+
 /* ---------- Logo (plataforma de elevación) ---------- */
 .logo-lift { width: 100%; height: 100%; }
 
