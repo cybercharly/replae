@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nosotros | REPLAE — Maquinaria para la Construcción</title>
+  <meta name="description" content="Conoce REPLAE: empresa especializada en renta y venta de maquinaria para la construcción, con servicio de mantenimiento y compromiso de llevarte a otro nivel." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="bg-white">
+  <div id="scrollProgress"></div>
+
+  <!-- TOP BAR -->
+  <div class="bg-brand-blue-dark text-white text-sm hidden md:block">
+    <div class="max-w-7xl mx-auto px-4 py-2 flex justify-between items-center">
+      <div class="flex items-center gap-6">
+        <a href="tel:3339556619" class="flex items-center gap-2 hover:text-brand-yellow transition"><i class="fas fa-phone"></i> 33 3955 6619</a>
+        <a href="tel:3311769457" class="flex items-center gap-2 hover:text-brand-yellow transition"><i class="fas fa-phone"></i> 33 1176 9457</a>
+        <a href="mailto:raul.casillas@replae-plataformaselevacion.com" class="flex items-center gap-2 hover:text-brand-yellow transition"><i class="fas fa-envelope"></i> raul.casillas@replae-plataformaselevacion.com</a>
+      </div>
+      <div class="flex items-center gap-2 text-gray-200"><i class="far fa-clock text-brand-yellow"></i> Lun–Vie 9:00–18:00 · Sáb 8:00–13:00</div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="bg-white sticky top-0 z-50 transition-shadow">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex justify-between items-center h-20">
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="img/grua-ico.png" alt="REPLAE" class="h-16 w-auto object-contain" />
+          <div class="leading-tight">
+            <span class="block text-2xl font-extrabold text-brand-blue tracking-tight">REPLAE</span>
+            <span class="block text-[11px] text-gray-500 font-medium -mt-1">Llevándote a otro nivel</span>
+          </div>
+        </a>
+        <div class="hidden lg:flex items-center gap-8">
+          <a href="index.html"     data-page="index.html"     class="nav-link text-gray-700">Inicio</a>
+          <a href="servicios.html" data-page="servicios.html" class="nav-link text-gray-700">Servicios</a>
+          <a href="nosotros.html"  data-page="nosotros.html"  class="nav-link text-gray-700">Nosotros</a>
+          <a href="contacto.html"  data-page="contacto.html"  class="nav-link text-gray-700">Contacto</a>
+          <a href="#" data-wa="Hola REPLAE, me gustaría cotizar la renta/venta de maquinaria. Vengo de su sitio web." class="btn-yellow px-5 py-2.5 rounded-lg text-sm"><i class="fab fa-whatsapp mr-1"></i> Cotizar ahora</a>
+        </div>
+        <button id="menuBtn" class="lg:hidden text-brand-blue text-2xl" aria-label="Abrir menú"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="lg:hidden bg-white border-t">
+      <div class="px-4 py-3 flex flex-col gap-1">
+        <a href="index.html"     data-page="index.html"     class="nav-link py-2 text-gray-700">Inicio</a>
+        <a href="servicios.html" data-page="servicios.html" class="nav-link py-2 text-gray-700">Servicios</a>
+        <a href="nosotros.html"  data-page="nosotros.html"  class="nav-link py-2 text-gray-700">Nosotros</a>
+        <a href="contacto.html"  data-page="contacto.html"  class="nav-link py-2 text-gray-700">Contacto</a>
+        <a href="#" data-wa="Hola REPLAE, me gustaría cotizar la renta/venta de maquinaria. Vengo de su sitio web." class="btn-yellow px-5 py-2.5 rounded-lg text-sm text-center mt-2"><i class="fab fa-whatsapp mr-1"></i> Cotizar ahora</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <header class="hero-gradient text-white">
+    <div class="max-w-7xl mx-auto px-4 py-20 md:py-24 relative z-10 text-center">
+      <div class="fade-up flex items-center justify-center gap-5 mb-4">
+        <h1 class="text-4xl md:text-6xl font-extrabold">Nosotros</h1>
+        <svg class="engineers-svg w-24 md:w-32" viewBox="0 0 240 180" role="img" aria-label="Ingenieros de REPLAE con equipo de seguridad">
+          <ellipse cx="120" cy="167" rx="98" ry="7" fill="rgba(0,0,0,0.22)"/>
+          <!-- Ingeniero A (casco amarillo, con tableta de inspección) -->
+          <g class="eng eng-a">
+            <rect x="68" y="150" width="11" height="9" rx="2" fill="#15202e"/>
+            <rect x="81" y="150" width="11" height="9" rx="2" fill="#15202e"/>
+            <rect x="68" y="156.5" width="11" height="2.5" fill="#FFC107"/>
+            <rect x="81" y="156.5" width="11" height="2.5" fill="#FFC107"/>
+            <rect x="70" y="112" width="9" height="40" rx="3" fill="#1f2937"/>
+            <rect x="81" y="112" width="9" height="40" rx="3" fill="#1f2937"/>
+            <rect x="58" y="70" width="9" height="34" rx="4" fill="#9fb0c3"/>
+            <rect x="93" y="70" width="9" height="34" rx="4" fill="#9fb0c3"/>
+            <circle cx="62.5" cy="106" r="4" fill="#f3d2a6"/>
+            <circle cx="97.5" cy="106" r="4" fill="#f3d2a6"/>
+            <rect x="66" y="64" width="28" height="50" rx="8" fill="#9fb0c3"/>
+            <rect x="65" y="66" width="30" height="46" rx="6" fill="#f97316"/>
+            <path d="M74 66 L80 78 L86 66 Z" fill="#9fb0c3"/>
+            <rect x="71" y="70" width="3" height="40" fill="#eef2f7"/>
+            <rect x="86" y="70" width="3" height="40" fill="#eef2f7"/>
+            <rect x="65" y="91" width="30" height="3" fill="#eef2f7"/>
+            <rect x="76" y="58" width="8" height="8" fill="#f3d2a6"/>
+            <circle cx="80" cy="52" r="10" fill="#f3d2a6"/>
+            <circle cx="76.5" cy="52" r="1.3" fill="#15202e"/>
+            <circle cx="83.5" cy="52" r="1.3" fill="#15202e"/>
+            <path d="M77 56 Q80 58.5 83 56" stroke="#15202e" stroke-width="1" fill="none" stroke-linecap="round"/>
+            <ellipse cx="80" cy="44" rx="15" ry="4" fill="#FFC107"/>
+            <path d="M67 45 A13 15 0 0 1 93 45 Z" fill="#FFC107"/>
+            <rect x="78.5" y="30" width="3" height="14" rx="1" fill="#e0a800"/>
+            <!-- tableta -->
+            <rect x="95" y="96" width="16" height="21" rx="2" fill="#ffffff" stroke="#15202e" stroke-width="1.5"/>
+            <rect x="99" y="93.5" width="7" height="3" rx="1" fill="#15202e"/>
+            <line x1="98" y1="103" x2="108" y2="103" stroke="#9fb0c3" stroke-width="1.5"/>
+            <line x1="98" y1="107" x2="108" y2="107" stroke="#9fb0c3" stroke-width="1.5"/>
+            <line x1="98" y1="111" x2="104" y2="111" stroke="#9fb0c3" stroke-width="1.5"/>
+          </g>
+          <!-- Ingeniero B (casco blanco) -->
+          <g class="eng eng-b">
+            <rect x="148" y="150" width="11" height="9" rx="2" fill="#15202e"/>
+            <rect x="161" y="150" width="11" height="9" rx="2" fill="#15202e"/>
+            <rect x="148" y="156.5" width="11" height="2.5" fill="#FFC107"/>
+            <rect x="161" y="156.5" width="11" height="2.5" fill="#FFC107"/>
+            <rect x="150" y="112" width="9" height="40" rx="3" fill="#1f2937"/>
+            <rect x="161" y="112" width="9" height="40" rx="3" fill="#1f2937"/>
+            <rect x="138" y="70" width="9" height="34" rx="4" fill="#9fb0c3"/>
+            <rect x="173" y="70" width="9" height="34" rx="4" fill="#9fb0c3"/>
+            <circle cx="142.5" cy="106" r="4" fill="#f3d2a6"/>
+            <circle cx="177.5" cy="106" r="4" fill="#f3d2a6"/>
+            <rect x="146" y="64" width="28" height="50" rx="8" fill="#9fb0c3"/>
+            <rect x="145" y="66" width="30" height="46" rx="6" fill="#f97316"/>
+            <path d="M154 66 L160 78 L166 66 Z" fill="#9fb0c3"/>
+            <rect x="151" y="70" width="3" height="40" fill="#eef2f7"/>
+            <rect x="166" y="70" width="3" height="40" fill="#eef2f7"/>
+            <rect x="145" y="91" width="30" height="3" fill="#eef2f7"/>
+            <rect x="156" y="58" width="8" height="8" fill="#f3d2a6"/>
+            <circle cx="160" cy="52" r="10" fill="#f3d2a6"/>
+            <circle cx="156.5" cy="52" r="1.3" fill="#15202e"/>
+            <circle cx="163.5" cy="52" r="1.3" fill="#15202e"/>
+            <path d="M157 56 Q160 58.5 163 56" stroke="#15202e" stroke-width="1" fill="none" stroke-linecap="round"/>
+            <ellipse cx="160" cy="44" rx="15" ry="4" fill="#f1f5f9"/>
+            <path d="M147 45 A13 15 0 0 1 173 45 Z" fill="#f1f5f9"/>
+            <rect x="158.5" y="30" width="3" height="14" rx="1" fill="#cbd5e1"/>
+          </g>
+        </svg>
+      </div>
+      <p class="gold-pulse max-w-2xl mx-auto text-lg font-semibold">Somos REPLAE, tu aliado en maquinaria para la construcción.</p>
+      <nav class="fade-up delay-2 text-sm text-blue-200 mt-6"><a href="index.html" class="hover:text-brand-yellow">Inicio</a> <span class="mx-2">/</span> <span class="text-brand-yellow">Nosotros</span></nav>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section class="py-20 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="fade-up text-3xl font-extrabold text-brand-blue title-accent">¿Quiénes somos?</h2>
+        <p class="fade-up delay-1 text-gray-600 mt-6 mb-4">En REPLAE nos especializamos en la renta y venta de maquinaria para la construcción: plataformas de elevación, montacargas, manipuladores y grúa Titan. Acompañamos cada proyecto con un servicio integral de mantenimiento y venta de refacciones.</p>
+        <p class="fade-up delay-2 text-gray-600 mb-4">Nuestro compromiso es ofrecer equipo confiable, en óptimas condiciones y con la atención que tu obra necesita para no detenerse. Por eso nuestro lema es <span class="font-semibold text-brand-blue">"Llevándote a otro nivel"</span>.</p>
+        <a href="contacto.html" class="fade-up delay-3 btn-yellow inline-block px-7 py-3.5 rounded-lg mt-2">Contáctanos <i class="fas fa-arrow-right ml-1"></i></a>
+      </div>
+      <div class="grid grid-cols-2 gap-5">
+        <div class="fade-up bg-gray-50 border-t-4 border-brand-yellow rounded-2xl p-7 text-center shadow-sm">
+          <i class="fas fa-arrows-up-to-line text-3xl text-brand-blue mb-3"></i>
+          <h3 class="font-bold text-brand-blue">Elevación</h3>
+          <p class="text-sm text-gray-500">Trabajos en altura seguros</p>
+        </div>
+        <div class="fade-up delay-1 bg-gray-50 border-t-4 border-brand-yellow rounded-2xl p-7 text-center shadow-sm">
+          <i class="fas fa-truck-ramp-box text-3xl text-brand-blue mb-3"></i>
+          <h3 class="font-bold text-brand-blue">Carga</h3>
+          <p class="text-sm text-gray-500">Manejo de materiales</p>
+        </div>
+        <div class="fade-up delay-2 bg-gray-50 border-t-4 border-brand-yellow rounded-2xl p-7 text-center shadow-sm">
+          <i class="fas fa-truck-monster text-3xl text-brand-blue mb-3"></i>
+          <h3 class="font-bold text-brand-blue">Izaje</h3>
+          <p class="text-sm text-gray-500">Grúa Titan de gran capacidad</p>
+        </div>
+        <div class="fade-up delay-3 bg-gray-50 border-t-4 border-brand-yellow rounded-2xl p-7 text-center shadow-sm">
+          <i class="fas fa-gears text-3xl text-brand-blue mb-3"></i>
+          <h3 class="font-bold text-brand-blue">Servicio</h3>
+          <p class="text-sm text-gray-500">Mantenimiento integral</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION / VISION / VALUES -->
+  <section class="py-20 md:py-24 bg-gradient-to-b from-gray-50 to-gray-100">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-14">
+        <span class="fade-up inline-block text-sm font-bold tracking-[0.2em] text-brand-yellow-dark uppercase mb-3" style="color:#b8860b">Lo que nos mueve</span>
+        <h2 class="fade-up delay-1 text-3xl md:text-4xl font-extrabold text-brand-blue title-accent mx-auto inline-block">Misión, Visión y Valores</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-7">
+        <div class="fade-up mvv-card p-8">
+          <i class="fas fa-sparkles mvv-spark"></i>
+          <div class="mvv-icon"><i class="fas fa-bullseye"></i></div>
+          <h3 class="text-2xl font-extrabold mb-3">Misión</h3>
+          <p class="text-blue-100/90 text-sm leading-relaxed">Proveer maquinaria confiable y servicio especializado que impulse el éxito y la seguridad de cada proyecto de nuestros clientes.</p>
+        </div>
+        <div class="fade-up delay-1 mvv-card p-8">
+          <i class="fas fa-sparkles mvv-spark"></i>
+          <div class="mvv-icon"><i class="fas fa-binoculars"></i></div>
+          <h3 class="text-2xl font-extrabold mb-3">Visión</h3>
+          <p class="text-blue-100/90 text-sm leading-relaxed">Ser la empresa líder en renta y venta de maquinaria para la construcción, reconocida por su calidad, confianza y servicio.</p>
+        </div>
+        <div class="fade-up delay-2 mvv-card p-8">
+          <i class="fas fa-sparkles mvv-spark"></i>
+          <div class="mvv-icon"><i class="fas fa-gem"></i></div>
+          <h3 class="text-2xl font-extrabold mb-3">Valores</h3>
+          <p class="text-blue-100/90 text-sm leading-relaxed">Compromiso, seguridad, confianza y atención cercana. Trabajamos para superar las expectativas en cada servicio.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section class="why-section py-20 md:py-24 bg-brand-blue text-white relative overflow-hidden">
+    <span class="why-blob why-blob-1"></span>
+    <span class="why-blob why-blob-2"></span>
+    <div class="max-w-7xl mx-auto px-4 relative z-10">
+      <div class="text-center mb-14">
+        <span class="fade-up inline-block text-sm font-bold tracking-[0.2em] text-brand-yellow uppercase mb-3">La diferencia REPLAE</span>
+        <h2 class="fade-up delay-1 text-3xl md:text-4xl font-extrabold title-accent mx-auto inline-block">Lo que nos distingue</h2>
+        <p class="fade-up delay-1 text-blue-100 mt-5 max-w-2xl mx-auto">No solo rentamos maquinaria: entregamos confianza, seguridad y respaldo en cada proyecto.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="fade-up feature-card">
+          <div class="feature-ico"><i class="fas fa-shield-halved"></i></div>
+          <h3 class="text-lg font-extrabold mb-1.5">Seguridad</h3>
+          <p class="text-blue-100 text-sm">Equipo revisado y listo para operar, con mantenimiento al día.</p>
+        </div>
+        <div class="fade-up delay-1 feature-card">
+          <div class="feature-ico"><i class="fas fa-truck-fast"></i></div>
+          <h3 class="text-lg font-extrabold mb-1.5">Disponibilidad</h3>
+          <p class="text-blue-100 text-sm">Entrega oportuna en tu obra para que nunca se detenga.</p>
+        </div>
+        <div class="fade-up delay-2 feature-card">
+          <div class="feature-ico"><i class="fas fa-user-gear"></i></div>
+          <h3 class="text-lg font-extrabold mb-1.5">Experiencia</h3>
+          <p class="text-blue-100 text-sm">Asesoría técnica especializada que recomienda el equipo correcto.</p>
+        </div>
+        <div class="fade-up delay-3 feature-card">
+          <div class="feature-ico"><i class="fas fa-thumbs-up"></i></div>
+          <h3 class="text-lg font-extrabold mb-1.5">Confianza</h3>
+          <p class="text-blue-100 text-sm">Servicio integral y cercano, antes, durante y después de la renta.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-brand-yellow">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+      <div>
+        <h2 class="text-2xl md:text-3xl font-extrabold text-brand-blue-dark">Trabajemos juntos</h2>
+        <p class="text-brand-blue-dark/80 mt-2">Llevemos tu próximo proyecto a otro nivel.</p>
+      </div>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="#" data-wa="Hola REPLAE, quiero conocer más sobre sus servicios. Vengo de su sitio web." class="btn-blue px-7 py-3.5 rounded-lg"><i class="fab fa-whatsapp mr-1"></i> Escríbenos</a>
+        <a href="servicios.html" class="bg-white text-brand-blue font-semibold px-7 py-3.5 rounded-lg hover:bg-gray-100 transition">Ver servicios</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-brand-blue-dark text-blue-100 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <div class="bg-brand-yellow text-brand-blue-dark w-11 h-11 rounded-lg flex items-center justify-center p-2"><svg viewBox="0 0 32 32" class="logo-lift" fill="none" aria-hidden="true"><circle cx="9" cy="27" r="2.6" fill="currentColor"/><circle cx="23" cy="27" r="2.6" fill="currentColor"/><rect x="5.5" y="22.5" width="21" height="3.4" rx="1.2" fill="currentColor"/><path d="M11 22 L21 15 L11 8 M21 22 L11 15 L21 8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><rect x="7" y="4.6" width="18" height="3" rx="1" fill="currentColor"/><path d="M9.5 4.6 V1.6 H22.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span class="text-2xl font-extrabold text-white">REPLAE</span>
+        </div>
+        <p class="text-sm text-blue-200 mb-4">Renta y venta de maquinaria para la construcción. Plataformas de elevación, montacargas, manipuladores, grúa Titan y servicio especializado.</p>
+        <p class="text-brand-yellow font-semibold italic">"Llevándote a otro nivel"</p>
+      </div>
+      <div>
+        <h3 class="text-white font-bold mb-4">Enlaces</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="index.html" class="hover:text-brand-yellow transition">Inicio</a></li>
+          <li><a href="servicios.html" class="hover:text-brand-yellow transition">Servicios</a></li>
+          <li><a href="nosotros.html" class="hover:text-brand-yellow transition">Nosotros</a></li>
+          <li><a href="contacto.html" class="hover:text-brand-yellow transition">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white font-bold mb-4">Contacto</h3>
+        <ul class="space-y-3 text-sm">
+          <li><a href="tel:3339556619" class="flex items-center gap-3 hover:text-brand-yellow transition"><i class="fas fa-phone text-brand-yellow"></i> 33 3955 6619</a></li>
+          <li><a href="tel:3311769457" class="flex items-center gap-3 hover:text-brand-yellow transition"><i class="fas fa-phone text-brand-yellow"></i> 33 1176 9457</a></li>
+          <li><a href="mailto:raul.casillas@replae-plataformaselevacion.com" class="flex items-start gap-3 hover:text-brand-yellow transition"><i class="fas fa-envelope text-brand-yellow mt-1"></i> raul.casillas@replae-plataformaselevacion.com</a></li>
+          <li><a href="https://maps.app.goo.gl/MvQTN6Y36uS9Ap3v8" target="_blank" rel="noopener" class="flex items-start gap-3 hover:text-brand-yellow transition"><i class="fas fa-location-dot text-brand-yellow mt-1"></i> Av. Hidalgo 110-A, 45685 San José del Castillo, Jal.</a></li>
+          <li class="flex items-start gap-3"><i class="far fa-clock text-brand-yellow mt-1"></i> Lun–Vie 9:00–18:00 · Sáb 8:00–13:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 mt-12 pt-6 border-t border-white/10 text-center text-sm text-blue-300">© <span id="year">2026</span> REPLAE. Todos los derechos reservados.</div>
+  </footer>
+
+  <button id="backToTop" type="button" aria-label="Volver arriba"><i class="fas fa-arrow-up"></i></button>
+  <a href="#" data-wa="Hola REPLAE, me gustaría más información. Vengo de su sitio web." class="wa-float" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

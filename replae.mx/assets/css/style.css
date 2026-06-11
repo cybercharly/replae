@@ -1,0 +1,629 @@
+/* ===========================================================
+   REPLAE — Custom styles
+   Brand colors: Blue (#0B3C7A) + Yellow (#FFC107)
+   =========================================================== */
+
+:root {
+  --blue:        #0B3C7A;
+  --blue-dark:   #082b58;
+  --blue-light:  #1561c4;
+  --yellow:      #FFC107;
+  --yellow-dark: #e0a800;
+  --ink:         #1a2330;
+  --gray:        #5b6675;
+}
+
+* { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Brand utility classes ---------- */
+.bg-brand-blue        { background-color: var(--blue); }
+.bg-brand-blue-dark   { background-color: var(--blue-dark); }
+.bg-brand-yellow      { background-color: var(--yellow); }
+.text-brand-blue      { color: var(--blue); }
+.text-brand-yellow    { color: var(--yellow); }
+.border-brand-yellow  { border-color: var(--yellow); }
+
+/* ---------- Hero gradient ---------- */
+.hero-gradient {
+  background: linear-gradient(125deg, var(--blue-dark) 0%, var(--blue) 55%, var(--blue-light) 100%);
+  position: relative;
+  overflow: hidden;
+}
+.hero-gradient::after {
+  content: "";
+  position: absolute;
+  top: -40%;
+  right: -10%;
+  width: 60%;
+  height: 180%;
+  background: radial-gradient(circle, rgba(255,193,7,0.18) 0%, rgba(255,193,7,0) 70%);
+  pointer-events: none;
+}
+.hero-gradient::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 44px 44px;
+  pointer-events: none;
+}
+
+/* ---------- Section title accent ---------- */
+.title-accent::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 4px;
+  background: var(--yellow);
+  border-radius: 4px;
+  margin-top: 14px;
+}
+.title-accent.mx-auto::after { margin-left: auto; margin-right: auto; }
+
+/* ---------- Buttons ---------- */
+.btn-yellow {
+  background: var(--yellow);
+  color: var(--blue-dark);
+  font-weight: 600;
+  transition: all .25s ease;
+  box-shadow: 0 6px 18px -6px rgba(255,193,7,.6);
+}
+.btn-yellow:hover { background: var(--yellow-dark); transform: translateY(-2px); }
+
+.btn-outline {
+  border: 2px solid rgba(255,255,255,.7);
+  color: #fff;
+  font-weight: 600;
+  transition: all .25s ease;
+}
+.btn-outline:hover { background: #fff; color: var(--blue); }
+
+.btn-blue {
+  background: var(--blue);
+  color: #fff;
+  font-weight: 600;
+  transition: all .25s ease;
+}
+.btn-blue:hover { background: var(--blue-dark); transform: translateY(-2px); }
+
+/* ---------- Service / generic cards ---------- */
+.card-hover {
+  transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+  border-top: 4px solid transparent;
+}
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 22px 40px -18px rgba(11,60,122,.45);
+  border-top-color: var(--yellow);
+}
+.card-hover .card-icon {
+  transition: transform .3s ease, background .3s ease, color .3s ease;
+}
+.card-hover:hover .card-icon {
+  transform: scale(1.08) rotate(-4deg);
+  background: var(--yellow);
+  color: var(--blue-dark);
+}
+
+/* ---------- Industry chip ---------- */
+.industry-chip {
+  transition: all .25s ease;
+}
+.industry-chip:hover {
+  background: var(--yellow);
+  color: var(--blue-dark);
+  border-color: var(--yellow);
+  transform: translateY(-3px);
+}
+
+/* ---------- Navbar ---------- */
+.nav-link {
+  position: relative;
+  font-weight: 500;
+  transition: color .2s ease;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -6px;
+  width: 0; height: 3px;
+  background: var(--yellow);
+  border-radius: 3px;
+  transition: width .25s ease;
+}
+.nav-link:hover::after,
+.nav-link.active::after { width: 100%; }
+.nav-link.active { color: var(--blue); }
+
+/* ---------- Floating WhatsApp ---------- */
+.wa-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 60;
+  width: 60px;
+  height: 60px;
+  border-radius: 9999px;
+  background: #25D366;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  box-shadow: 0 10px 28px -6px rgba(37,211,102,.7);
+  animation: wa-pulse 2.4s infinite;
+  transition: transform .25s ease;
+}
+.wa-float:hover { transform: scale(1.1); }
+@keyframes wa-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(37,211,102,.55); }
+  70%  { box-shadow: 0 0 0 16px rgba(37,211,102,0); }
+  100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+}
+
+/* ---------- Animations ---------- */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(34px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up {
+  opacity: 0;
+}
+.fade-up.in-view {
+  animation: fadeInUp .7s ease forwards;
+}
+
+/* Revelado direccional con [data-reveal] */
+[data-reveal] {
+  opacity: 0;
+  transition: opacity .7s ease, transform .7s ease;
+  will-change: opacity, transform;
+}
+[data-reveal="left"]  { transform: translateX(-46px); }
+[data-reveal="right"] { transform: translateX(46px); }
+[data-reveal="up"]    { transform: translateY(46px); }
+[data-reveal="zoom"]  { transform: scale(.9); }
+[data-reveal].revealed { opacity: 1; transform: none; }
+
+/* ---------- Scroll progress bar ---------- */
+#scrollProgress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 4px;
+  width: 0;
+  z-index: 70;
+  background: linear-gradient(90deg, var(--yellow), var(--blue-light));
+  box-shadow: 0 0 10px rgba(255,193,7,.6);
+  transition: width .1s linear;
+}
+
+/* ---------- Navbar al hacer scroll ---------- */
+#navbar.nav-scrolled {
+  background: rgba(255,255,255,.88);
+  backdrop-filter: saturate(160%) blur(10px);
+  -webkit-backdrop-filter: saturate(160%) blur(10px);
+}
+
+/* ---------- Back to top ---------- */
+#backToTop {
+  position: fixed;
+  bottom: 26px;
+  left: 24px;
+  z-index: 55;
+  width: 50px;
+  height: 50px;
+  border-radius: 9999px;
+  background: var(--blue);
+  color: #fff;
+  font-size: 19px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 24px -8px rgba(11,60,122,.7);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px);
+  transition: all .3s ease;
+}
+#backToTop.show { opacity: 1; visibility: visible; transform: translateY(0); }
+#backToTop:hover { background: var(--blue-dark); transform: translateY(-3px); }
+
+/* ---------- Marquesina de marcas ---------- */
+.marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.marquee-track {
+  display: flex;
+  gap: 3.5rem;
+  width: max-content;
+  align-items: center;
+  animation: marquee 30s linear infinite;
+}
+.marquee:hover .marquee-track { animation-play-state: paused; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.marquee-item {
+  font-weight: 800;
+  font-size: 2.15rem;
+  letter-spacing: .5px;
+  color: var(--blue);
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: .65rem;
+  transition: color .25s ease, transform .25s ease;
+}
+.marquee-item i { font-size: 1.6rem; color: var(--yellow); }
+.marquee-item:hover { color: var(--blue-light); transform: scale(1.12); }
+.marquee-item:hover i { color: var(--yellow-dark); }
+
+/* ---------- Filtros del catálogo ---------- */
+.cat-filter {
+  border: 2px solid #e2e6ec;
+  color: var(--gray);
+  background: #fff;
+  font-weight: 600;
+  font-size: .9rem;
+  padding: .55rem 1.3rem;
+  border-radius: 9999px;
+  transition: all .22s ease;
+}
+.cat-filter:hover { border-color: var(--blue); color: var(--blue); transform: translateY(-2px); }
+.cat-filter.active {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #fff;
+  box-shadow: 0 8px 18px -8px rgba(11,60,122,.7);
+}
+
+/* Transición al filtrar tarjetas */
+[data-category] { transition: opacity .3s ease, transform .3s ease; }
+
+/* ---------- Lightbox: flechas de navegación ---------- */
+.lb-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px; height: 48px;
+  border-radius: 9999px;
+  background: rgba(255,255,255,.15);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+  transition: background .2s ease;
+  backdrop-filter: blur(4px);
+}
+.lb-nav:hover { background: var(--yellow); color: var(--blue-dark); }
+#imgLightboxPrev { left: -64px; }
+#imgLightboxNext { right: -64px; }
+@media (max-width: 768px) {
+  #imgLightboxPrev { left: 6px; }
+  #imgLightboxNext { right: 6px; }
+}
+.delay-1 { animation-delay: .12s; }
+.delay-2 { animation-delay: .24s; }
+.delay-3 { animation-delay: .36s; }
+.delay-4 { animation-delay: .48s; }
+
+/* ---------- Mobile menu ---------- */
+#mobileMenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .35s ease;
+}
+#mobileMenu.open { max-height: 420px; }
+
+/* ---------- Stat counters ---------- */
+.stat-num { font-variant-numeric: tabular-nums; }
+
+/* ---------- Plataforma de elevación animada (hero) ---------- */
+.lift-svg {
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  filter: drop-shadow(0 24px 30px rgba(0,0,0,.25));
+}
+/* Brazo articulado: pivota desde la torreta para subir y bajar */
+.boom {
+  transform-box: view-box;
+  transform-origin: 96px 268px;
+  animation: boomSwing 5s ease-in-out infinite;
+}
+/* La canastilla contrarresta el giro para mantenerse nivelada */
+.boom-basket {
+  transform-box: fill-box;
+  transform-origin: 0% 100%;
+  animation: basketLevel 5s ease-in-out infinite;
+}
+@keyframes boomSwing {
+  0%, 100% { transform: rotate(5deg); }
+  50%      { transform: rotate(-22deg); }
+}
+@keyframes basketLevel {
+  0%, 100% { transform: rotate(-5deg); }
+  50%      { transform: rotate(22deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .boom, .boom-basket { animation: none; }
+}
+
+/* ---------- Eslogan con destello ---------- */
+.slogan-flash {
+  position: relative;
+  overflow: hidden;
+  animation: sloganGlow 2.2s ease-in-out infinite;
+}
+.slogan-flash::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(110deg, transparent 0%, rgba(255,255,255,.65) 50%, transparent 100%);
+  transform: skewX(-20deg);
+  animation: sloganShine 2.8s ease-in-out infinite;
+}
+@keyframes sloganShine {
+  0%   { left: -120%; }
+  55%, 100% { left: 160%; }
+}
+@keyframes sloganGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255,193,7,0); }
+  50%      { box-shadow: 0 0 16px 2px rgba(255,193,7,.55); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .slogan-flash, .slogan-flash::after { animation: none; }
+}
+
+/* ---------- Tarjetas Misión / Visión / Valores ---------- */
+.mvv-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  color: #fff;
+  background: linear-gradient(150deg, var(--blue-dark) 0%, var(--blue) 55%, var(--blue-light) 100%);
+  box-shadow: 0 14px 30px -16px rgba(11,60,122,.55);
+  border: 1px solid rgba(255,255,255,.08);
+  transition: transform .38s cubic-bezier(.2,.7,.2,1), box-shadow .38s ease;
+}
+/* textura de cuadrícula sutil */
+.mvv-card > * { position: relative; z-index: 2; }
+.mvv-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-image:
+    radial-gradient(circle at 85% 12%, rgba(255,193,7,.22) 0%, rgba(255,193,7,0) 42%),
+    linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+  background-size: 100% 100%, 30px 30px, 30px 30px;
+  pointer-events: none;
+}
+/* destello que recorre la tarjeta al pasar el cursor */
+.mvv-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -160%;
+  width: 65%;
+  height: 100%;
+  z-index: 3;
+  background: linear-gradient(110deg, transparent 0%, rgba(255,255,255,.38) 50%, transparent 100%);
+  transform: skewX(-20deg);
+  pointer-events: none;
+}
+.mvv-card:hover {
+  transform: translateY(-12px) scale(1.015);
+  box-shadow: 0 34px 56px -22px rgba(11,60,122,.7), 0 0 0 1px rgba(255,193,7,.35);
+}
+.mvv-card:hover::after { animation: mvvShine .95s ease forwards; }
+@keyframes mvvShine { from { left: -160%; } to { left: 170%; } }
+
+/* ícono con halo que pulsa (destello constante) */
+.mvv-icon {
+  width: 4.25rem;
+  height: 4.25rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  color: var(--blue-dark);
+  background: var(--yellow);
+  margin-bottom: 1.4rem;
+  transition: transform .38s ease;
+  animation: mvvGlow 2.8s ease-in-out infinite;
+}
+.mvv-card:hover .mvv-icon { transform: rotate(-8deg) scale(1.1); }
+@keyframes mvvGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255,193,7,0); }
+  50%      { box-shadow: 0 0 26px 4px rgba(255,193,7,.55); }
+}
+
+/* chispa que titila en la esquina */
+.mvv-spark {
+  position: absolute;
+  top: 1.1rem;
+  right: 1.2rem;
+  z-index: 3;
+  color: var(--yellow);
+  font-size: 1.05rem;
+  animation: mvvTwinkle 2.6s ease-in-out infinite;
+}
+@keyframes mvvTwinkle {
+  0%, 100% { opacity: .25; transform: scale(.8) rotate(0deg); }
+  50%      { opacity: 1;   transform: scale(1.2) rotate(18deg); }
+}
+
+/* desfase por tarjeta para un efecto vivo */
+.mvv-card:nth-child(2) .mvv-icon,
+.mvv-card:nth-child(2) .mvv-spark { animation-delay: .5s; }
+.mvv-card:nth-child(3) .mvv-icon,
+.mvv-card:nth-child(3) .mvv-spark { animation-delay: 1s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .mvv-icon, .mvv-spark { animation: none; }
+  .mvv-card:hover::after { animation: none; }
+}
+
+/* ---------- Sección "Lo que nos distingue" ---------- */
+.why-blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(8px);
+  opacity: .5;
+  pointer-events: none;
+  z-index: 0;
+}
+.why-blob-1 {
+  width: 340px; height: 340px;
+  top: -90px; left: -80px;
+  background: radial-gradient(circle, rgba(255,193,7,.30), rgba(255,193,7,0) 70%);
+  animation: blobFloat 11s ease-in-out infinite;
+}
+.why-blob-2 {
+  width: 420px; height: 420px;
+  bottom: -140px; right: -110px;
+  background: radial-gradient(circle, rgba(21,97,196,.55), rgba(21,97,196,0) 70%);
+  animation: blobFloat 14s ease-in-out infinite reverse;
+}
+@keyframes blobFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(30px, -28px) scale(1.12); }
+}
+
+.feature-card {
+  position: relative;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  border-radius: 1.25rem;
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.12);
+  backdrop-filter: blur(4px);
+  transition: transform .35s cubic-bezier(.2,.7,.2,1), background .35s ease, box-shadow .35s ease, border-color .35s ease;
+}
+.feature-card:hover {
+  transform: translateY(-12px);
+  background: rgba(255,255,255,.12);
+  border-color: rgba(255,193,7,.5);
+  box-shadow: 0 26px 46px -22px rgba(0,0,0,.55), 0 0 0 1px rgba(255,193,7,.25);
+}
+.feature-ico {
+  width: 4.5rem;
+  height: 4.5rem;
+  margin: 0 auto 1.2rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.9rem;
+  color: var(--yellow);
+  background: rgba(255,193,7,.12);
+  border: 2px solid rgba(255,193,7,.35);
+  animation: featFloat 4s ease-in-out infinite;
+}
+.feature-card:hover .feature-ico {
+  color: var(--blue-dark);
+  background: var(--yellow);
+  border-color: var(--yellow);
+  box-shadow: 0 0 26px 4px rgba(255,193,7,.55);
+  transform: scale(1.12);
+}
+@keyframes featFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-9px); }
+}
+.feature-card:nth-child(2) .feature-ico { animation-delay: .4s; }
+.feature-card:nth-child(3) .feature-ico { animation-delay: .8s; }
+.feature-card:nth-child(4) .feature-ico { animation-delay: 1.2s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .why-blob, .feature-ico { animation: none; }
+}
+
+/* ---------- Montacargas animado (hero contacto) ---------- */
+.forklift-svg { height: auto; overflow: visible; filter: drop-shadow(0 8px 12px rgba(0,0,0,.35)) drop-shadow(0 0 1px rgba(255,255,255,.45)); }
+.fk-wheel {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  animation: fkSpin 1.8s linear infinite;
+}
+.fk-body  { animation: fkBob 1.8s ease-in-out infinite; }
+.fk-fork  { animation: fkLift 2.6s ease-in-out infinite; }
+.fk-shadow { animation: fkShadow 1.8s ease-in-out infinite; transform-box: fill-box; transform-origin: 50% 50%; }
+.fk-puff   { transform-box: fill-box; animation: fkPuff 2.2s ease-out infinite; }
+.fk-puff-2 { animation-delay: 1.1s; }
+@keyframes fkSpin { to { transform: rotate(360deg); } }
+@keyframes fkBob  { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+@keyframes fkLift { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-28px); } }
+@keyframes fkShadow { 0%,100% { transform: scaleX(1); opacity: .22; } 50% { transform: scaleX(.9); opacity: .14; } }
+@keyframes fkPuff {
+  0%   { opacity: .55; transform: translate(0, 0) scale(.6); }
+  100% { opacity: 0;   transform: translate(-10px, -18px) scale(1.4); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fk-wheel, .fk-body, .fk-fork, .fk-shadow, .fk-puff { animation: none; }
+}
+
+/* ---------- Ingenieros animados (hero nosotros) ---------- */
+.engineers-svg { height: auto; overflow: visible; filter: drop-shadow(0 8px 12px rgba(0,0,0,.3)) drop-shadow(0 0 1px rgba(255,255,255,.4)); }
+.eng { transform-box: fill-box; transform-origin: 50% 100%; animation: engBob 3.2s ease-in-out infinite; }
+.eng-b { animation-delay: .9s; }
+@keyframes engBob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+@media (prefers-reduced-motion: reduce) { .eng { animation: none; } }
+
+/* ---------- Texto con destello dorado tipo "shimmer" (loop) ---------- */
+.gold-pulse {
+  background: linear-gradient(
+    90deg,
+    #dbeafe 0%,
+    #dbeafe 30%,
+    #FFD700 45%,
+    #FFFACD 50%,
+    #FFD700 55%,
+    #dbeafe 70%,
+    #dbeafe 100%
+  );
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: goldShimmer 4.5s linear infinite;
+}
+@keyframes goldShimmer {
+  0%   { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gold-pulse { animation: none; -webkit-text-fill-color: #dbeafe; color: #dbeafe; }
+}
+
+/* ---------- Pickup animada (hero servicios) ---------- */
+.pickup-svg { height: auto; overflow: visible; filter: drop-shadow(0 8px 12px rgba(0,0,0,.35)) drop-shadow(0 0 1px rgba(255,255,255,.45)); }
+.pk-wheel { transform-box: fill-box; transform-origin: 50% 50%; animation: pkSpin 1.5s linear infinite; }
+.pk-body  { animation: fkBob 1.5s ease-in-out infinite; }
+.pk-shadow { transform-box: fill-box; transform-origin: 50% 50%; animation: fkShadow 1.5s ease-in-out infinite; }
+.pk-puff   { transform-box: fill-box; animation: fkPuff 2.1s ease-out infinite; }
+.pk-puff-2 { animation-delay: 1.05s; }
+@keyframes pkSpin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .pk-wheel, .pk-body, .pk-shadow, .pk-puff { animation: none; }
+}
+
+/* ---------- Logo (plataforma de elevación) ---------- */
+.logo-lift { width: 100%; height: 100%; }
+
+/* ---------- Misc ---------- */
+.overlay-dark::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(8,43,88,.85), rgba(8,43,88,.7));
+}
